@@ -144,28 +144,30 @@ origin: https://github.com/mainsail-crew/moonraker-timelapse.git
 ##   Directory where ffmpeg is installed
 
 
-[power lampada]
-type: tasmota
+[power chamber_led]
+type: klipper_device
+object_name: output_pin chamber_led
+
 #   The type of device.  Can be either gpio, rf, tplink_smartplug, tasmota
 #   shelly, homeseer, homeassistant, or loxonev1.
 #   This parameter must be provided.
-off_when_shutdown: True
+#off_when_shutdown: True
 #   If set to True the device will be powered off when Klipper enters
 #   the "shutdown" state.  This option applies to all device types.
 #   The default is False.
 #off_when_shutdown_delay: 2
 #   If "off_when_shutdown" is set, this option specifies the amount of time
 #   (in seconds) to wait before turning the device off. Default is 0 seconds.
-on_when_job_queued: True
+#on_when_job_queued: True
 #   If set to True the device will power on if a job is queued while the
 #   device is off.  This allows for an automated "upload, power on, and
 #   print" approach directly from the slicer, see the configuration example
 #   below for details. The default is False.
-locked_while_printing: False
+#locked_while_printing: False
 #   If True, locks the device so that the power cannot be changed while the
 #   printer is printing. This is useful to avert an accidental shutdown to
 #   the printer's power.  The default is False.
-restart_klipper_when_powered: False
+#restart_klipper_when_powered: False
 #   If set to True, Moonraker will issue a "FIRMWARE_RESTART" to Klipper
 #   after the device has been powered on.  Note: If it isn't possible to
 #   schedule a firmware restart (ie: Klippy is disconnected), the restart
@@ -210,7 +212,7 @@ restart_klipper_when_powered: False
 #   If your single-relay Tasmota device switches on/off successfully,
 #   but fails to report its state, ensure that 'SetOption26' is set in
 #   Tasmota.
-address: 192.168.1.182 
+#address: 192.168.1.182 
 #http://lampadastampante3d/
 #   A valid ip address or hostname for the tasmota device.  This parameter
 #   must be provided.
